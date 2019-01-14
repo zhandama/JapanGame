@@ -1,0 +1,21 @@
+.jplist-nav{ height:auto; display:block; overflow:hidden; text-align:center;z-index: 1;}
+.jplist-nav .jpnav{ width:50%; height:0.88rem; line-height:0.88rem; color:#6b707c; display:block;}
+.jplist-nav .jpnav.active{ color:#0090ff; background:url(../../images/icon/line-bg.png) no-repeat center bottom; background-size:0.5rem auto;}
+
+.jplist-info{height:auto; display:block; position:relative;}
+.jplist-info .jplist-menu{ height:1.04rem;}
+.jplist-info .jplist-menu a{ display:block; height:.72rem; width:46.5%; border-radius:0.1rem; text-align:center; line-height:0.72rem;}
+.jplist-info .jplist-menu a span{ height:.72rem; display:inline-block; color:#000;}
+.jplist-info .jplist-menu a span.menu-sortin{ background:url(../../images/icon/menu-sortin.png) no-repeat right center; padding-right:0.37rem; background-size:0.26rem;}
+.jplist-info .jplist-menu a span.menu-seach{ background:url(../../images/icon/menu-seach.png) no-repeat right center; padding-right:0.37rem; background-size:0.25rem;}
+.jplist-info .jplist-menu a.active span{ color:#0090ff;}
+.jplist-info .jplist-menu a.active span.menu-sortin{ background-image:url(../../images/icon/menu-sortin-hov.png)}
+.jplist-info .jplist-menu a.active span.menu-seach{ background-image:url(../../images/icon/menu-seach-hov.png)}
+
+.jplist-info .jplist-seach{ position:absolute; top:1.04rem; width:100%;}
+
+.jplist-info .jplist-seach .sortin-mold{ height:auto; display:block; overflow:hidden;}
+.jplist-info .jplist-seach .sortin-mold ul li{ height:0.88rem; overflow:hidden; padding-right:0.25rem}
+.jplist-info .jplist-seach .sortin-mold ul li:first-child{ border-top:none;}
+.jplist-info .jplist-seach .sortin-mold ul li span{ display:block; line-height:0.88rem; color:#000;}
+.jplist-info .jplist-seach .sortin-mold ul li.active span{ color:#0090ff; background:url(../../images/icon/list-confirm.png) no-repeat right center; background-size:0.33rem; }

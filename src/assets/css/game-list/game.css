@@ -1,0 +1,38 @@
+.detail-top .game-input{max-width: 80%; margin-left: auto; margin-right: auto; height: .96rem; line-height: .96rem; text-align: center; -webkit-margin-before: 0; -webkit-margin-after: 0; padding: 0.15rem 0.3rem 0.15rem 0.2rem;}
+.detail-top .game-input input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color:#6b707c;}
+.detail-top .game-input input::-moz-placeholder, textarea:-moz-placeholder { color:#6b707c;}
+.detail-top .game-input input::-ms-input-placeholder, textarea:-ms-input-placeholder { color:#6b707c;}
+.detail-top .game-input .cave{border-radius: 0.08rem; border: none; background-color: #dddddd; width: 100%; height: 100%; float: left; text-align: center; color:#000000;}
+
+/*游戏按文字搜索*/
+.japangame-area{height:auto; display:block; overflow:hidden;}
+.japangame-area ul{height: auto;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;overflow-x: scroll;}
+.japangame-area ul li{ }
+.japangame-list ul li:first-child{ border-top:none;}
+.japangame-area ul li a{height:.58rem; width:0.79rem ;display:block; overflow:hidden;}
+.japangame-area ul li span{ display:inline-block; width:0.58rem; height:0.58rem; text-align:center; line-height:0.58rem; color:#000} 
+.japangame-area ul li em{ display:inline-block; width:1px; height:0.22rem; background-color:#e8e8e8;}
+.japangame-area ul li.active a span{ background-color:#0090ff; border-radius:0.1rem; color:#fff}
+
+/*游戏列表*/
+
+/*手游*/
+.japangame-list{ height:auto; display:block; overflow:hidden;}
+.japangame-list ul li{ height:auto; display:block; overflow:hidden;}
+.japangame-list ul li .selgame{ display:inline-block; width:0.68rem; height:0.68rem; overflow:hidden;}
+.japangame-list ul li .selgame img{ width:100%; height:100%; border-radius:0.1rem;}
+.japangame-list ul li .seltext{ line-height:0.68rem; width: 80%;}
+
+/*端游*/
+.search-game .tab .tab-list{float: left;width: 100%;position: relative;}
+.tab .tab-list .tab-panel{position: relative;}
+.search-game .tab-class01{width: 100%;height: auto;display: block;overflow: hidden;}
+.search-game .tab-class01 ul li{line-height: 0.85rem;text-align: center; height:auto; overflow:hidden;}
+.search-game .tab-class01 ul li:first-child{ border-top:none;}
+.search-game .tab-class01 ul li span { display:inline-block; width:1.16rem; height:0.85rem;}
+.search-game .tab-class01 ul li span img{ width:100%; height:100%;}
+.search-game .tab-class01 ul li em{display: inline-block;}
+
+/*更多*/
+.tab-more{ height:auto; display:block; overflow:hidden; text-align: center;}
+.tab-more a{width: 5rem;height: 0.66rem;line-height: 0.66rem;display: inline-block;background-color: #f0f8ff;border-radius: 0.5rem;color: #2e599c; margin-left:-0.25rem;}

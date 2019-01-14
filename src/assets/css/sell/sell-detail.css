@@ -1,0 +1,225 @@
+.all-detail {
+    height: auto;
+    overflow: hidden;
+    display: block;
+}
+
+.all-detail .record-titl {
+    height: 0.75rem;
+    line-height: 0.75rem;
+    background: url(../../images/icon/arret.png) no-repeat left center;
+    background-size: 0.06rem;
+    width: 70%;
+    margin-left: 0.25rem;
+    color: #49607b;
+}
+.upload{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: inherit;
+}
+.img-list-item, .img-list-item img {
+    width: 1.52rem;
+    height: 1.52rem;
+    margin-right: .32rem;
+    position: relative;
+}
+.img-list-item i.del-img {
+    width: 0.36rem;
+    height: 0.36rem;
+    display: inline-block;
+    background: url(../../images/icon/img-close.png) center no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: -0.2rem;
+    right: -0.2rem;
+}
+.add-img {
+    background: #ececec;
+    width: 1.52rem;
+    height: 1.52rem;
+}
+.add-img label {
+    width: 1.52rem;
+    height: 1.52rem;
+    display: inline-block;
+    background: url(../../images/icon/add-img.png) no-repeat center;
+    background-size: 100%;
+}
+.add-img label input{
+    visibility: hidden;
+}
+.img-list-item:nth-child(4n) {
+    margin-right: 0;
+}
+.all-detail .img-ts{
+    padding-bottom: 0.28rem;
+}
+.all-detail .order-container{
+    padding: 0rem 0rem 0rem 0.25rem;
+    height: auto;
+    display: block;
+    overflow: hidden;
+}
+.all-detail .order-container span {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 0.6rem;
+}
+.toRight {
+    width: 0.14rem;
+    height: 0.24rem;
+    display: inline-block;
+    background: url(../../images/icon/right.png) center no-repeat;
+    background-size: 100%;
+    margin-top: 0.15rem;
+}
+.order-container .commodity-name{
+    padding-bottom: 0.15rem;
+}
+.order-container .commodity-name input{
+    border: none;
+    background-color: #fff;
+    line-height: 0.6rem;
+    height: 0.6rem;
+    width: 91%;
+    text-indent: 0.25rem;
+}
+.order-container .text-area{
+    width: 95%;
+    height: 3.9rem;
+    line-height: 0.6rem;
+    border: none;
+    margin-top: 0.2rem;
+    resize: none;
+    padding-left: 0.25rem;
+}
+.sale-order{
+    height: auto;
+    display: block;
+    overflow: hidden;
+    padding: 0.15rem 0.3rem 0.2rem 0.3rem; 
+}
+.sale-order .sale-order-choose{
+    padding: 0.15rem 0rem 0.15rem ;
+    overflow: hidden;
+    display: block;
+}
+.sale-order .sale-order-choose i{
+    width: 0.3rem;
+    height: 0.3rem;
+    display: inline-block;
+    background: url(../../images/icon/popselect.png) center no-repeat;
+    background-size: 100%;
+	vertical-align: middle;
+}
+.sale-order .sale-order-choose em{ vertical-align:middle;}
+.sale-order .active i.icon{
+    width: 0.3rem;
+    height: 0.3rem;
+    display: inline-block;
+    background: url(../../images/icon/sure-radio.png) center no-repeat;
+    background-size: 100%;
+}
+.sale-order .sure-btn  a.sellbtn{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.32rem;
+    background-color: #0090ff;
+    display: block;
+    border-radius: 0.08rem;
+    text-align: center;
+    color: #fff;
+}
+.mint-toast{
+    position: fixed;
+    width: 60%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .7);
+    color: #fff;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1000;
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+    padding: 0.2rem 0.3rem;
+    display: none;
+}
+.mint-toast.is-placemiddle{
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.mint-toast .poprmts{
+    width: 0.32rem;
+    height: 0.32rem;
+    display: inline-block;
+    background: url(../../images/icon/poprm-ts.png) center no-repeat;
+    background-size: 100%;
+    float: left;
+    margin-top: 0.03rem;
+}
+.mint-toast-text {
+    font-size: .28rem;
+    float: left;
+    line-height: 0.32rem;
+}
+.bottom-bomb {
+    width: 100%;
+    max-width: 768px;
+    max-height: 8.7rem;
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 999;
+}
+.bomb-title {
+    width: 100%;
+    height: 0.99rem;
+    line-height: 0.99rem;
+    position: relative;
+}
+.bomb-title .bomb-close {
+    width: .96rem;
+    height: .96rem;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../../images/icon/close.png) 50% no-repeat;
+    background-size: .27rem;
+}
+.bomb-danxuan .bomb-content {
+    width: 100%;
+    max-height: 7.64rem;
+    min-height: 3.98rem;
+    overflow-y: auto;
+}
+.bomb-danxuan .bomb-content .bomb-li-item li {
+    line-height: .96rem;
+    height: .96rem;
+    padding-left: .25rem;
+    font-size: .28rem;
+    color: #000;
+    position: relative;
+}
+.bomb-danxuan .bomb-content .bomb-li-item li .gou{
+    display: none;
+}
+.bomb-danxuan .bomb-content .bomb-li-item li.active .gou{
+    width: 0.33rem;
+    height: 0.23rem;
+    display: inline-block;
+    position: absolute;
+    right: 0.25rem;
+    top: 0.35rem;
+    background: url(../../images/icon/list-confirm.png) center no-repeat;
+    background-size: 100%;
+}
+.bomb-danxuan .bomb-content .bomb-li-item li.active{
+    color: #0090ff;
+}

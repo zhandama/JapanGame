@@ -1,0 +1,66 @@
+/*帮助中心*/
+.help-main{ height:auto; display:block; overflow:hidden;}
+.help-info{height:auto; display:block; overflow:hidden;}
+.help-info ul li{height:auto; display:block; overflow:hidden;}
+.help-info ul li .help-list{height:auto; display:block; overflow:hidden;}
+.help-info ul li .help-list .help-upic{ width:0.88rem; height:0.86rem;}
+.help-info ul li .help-list .help-upic i.hpico{ display:block; width:0.88rem; height:0.86rem; text-align:center; line-height:0.86rem;}
+.help-info ul li .help-list .help-upic i.hpico img{ width:0.46rem; height:0.5rem;}
+
+.help-info ul li .help-list .help-conn{ margin-left:1.10rem;height:auto; display:block; overflow:hidden; background:url(../../images/icon/right03.png) no-repeat right center; background-size:0.13rem 0.25rem; padding-right:0.5rem;}
+.help-info ul li .help-list .help-conn .help-titl{ height:0.46rem; line-height:0.46rem;} 
+.help-info ul li .help-list .help-conn .help-ptxt{ height:0.4rem; line-height:0.4rem; color:#7e7e7e;}
+
+/*帮助中心列表*/
+.helplist-info{height:auto; display:block; overflow:hidden;}
+.helplist-info ul li{height:auto; display:block; overflow:hidden;}
+.helplist-info ul li .helplist-boxs{height:auto; display:block; overflow:hidden;}
+.helplist-info ul li .helplist-boxs .helplist-titl{ height:auto; display:block; overflow:hidden; }
+
+
+.helplist-info ul li .helplist-boxs .helplist-titl span{ display:block; line-height:0.38rem;padding:0.3rem 0;}
+.helplist-info ul li .helplist-boxs .helplist-titl span.help-up{ background:url(../../images/icon/help-up.png) no-repeat right center; background-size:0.26rem 0.14rem;}
+.helplist-info ul li .helplist-boxs .helplist-titl span.help-down{ background:url(../../images/icon/help-down.png) no-repeat right center; background-size:0.26rem 0.14rem;}
+
+
+.helplist-info ul li .helplist-boxs .helplist-conn{height:auto; display:block; overflow:hidden;}
+.helplist-info ul li .helplist-boxs .helplist-conn .helplist-deta{height:auto; display:block; overflow:hidden; background-color:#f6f6f6; border-radius:0.1rem; }
+.helplist-info ul li .helplist-boxs .helplist-conn .helplist-deta p{ line-height:0.5rem;}
+.helplist-info ul li .helplist-boxs .helplist-conn .helplist-deta span.deta{ height:0.66rem; line-height:.66rem; background:url(../../images/icon/deta-ico.png) no-repeat 0.04rem center; background-size:0.09rem 0.14rem;}
+
+
+
+/*意见反馈*/
+.feedback-titl{height:auto; display:block; overflow:hidden;}
+.feedback-titl .fdtxt{ line-height:0.5rem; }
+.feedback-titl .fdtxt em{color:#007eff;}
+
+.feedback-info{height:auto; display:block; overflow:hidden;}
+.feedback-info ul li{height:auto; display:block; overflow:hidden;}
+.feedback-info ul li .feedinfo-titl{ height:0.48rem; line-height:0.48rem;}
+.feedback-info ul li .feedinfo-titl span.current{ display:block; height:0.48rem; background:url(../../images/icon/arret.png) no-repeat left center; background-size:auto .3rem;}
+.feedback-info ul li .feedinfo-conn{height:auto; display:block; overflow:hidden;}
+.feedback-info ul li .feedinfo-conn .fdlist{ line-height:0.45rem;}
+.feedback-info ul li .feedinfo-conn .fdlist i.fdrico{ width:0.14rem; height:.45rem; background:url(../../images/icon/right.png) no-repeat right center; background-size:0.14rem 0.24rem;}
+
+.feedback-info ul li .feedinfo-conn .fdarea{ height:auto; display:block; width:100%; border:none; line-height:0.5rem; min-height:3.7rem;}
+
+.feedback-enter{height:auto; display:block; overflow:hidden; text-align:center;}
+.feedback-enter .feedback-btn{ height:0.8rem; line-height:0.8rem; display:block; border-radius:0.1rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+/*详情页标题*/
+.japan-titl{ height:0.9rem; overflow:hidden;}
+.japan-titl span{ display:block; line-height:0.9rem; background:url(../../images/icon/arret.png) no-repeat left center; background-size:auto 0.3rem;}
+
+/*下单信息*/
+.order-gold{ height:auto; display:block; overflow:hidden;}
+.order-gold ul li{height:auto; display:block; overflow:hidden;}
+.order-gold .single{height:auto; display:block; overflow:hidden;}
+.order-gold .single .odsglist{ height:.42rem; width:47%; display:block; overflow:hidden;}
+.order-gold .single .odsglist .name{ width:46%; text-align:right; line-height:.42rem;}
+.order-gold .single .odsglist .price{ width:46%; text-align:left; line-height:.42rem;}
+.order-gold .orknot{ height:auto; display:block; overflow:hidden;}
+.order-gold .orknot .odsglist{ height:.88rem; width:47%; display:block; overflow:hidden;}
+.order-gold .orknot .odsglist .name{ width:46%; text-align:right; line-height:.88rem;}
+.order-gold .orknot .odsglist .price{ width:46%; text-align:left; line-height:.88rem;}
+
+.order-enter{height:auto; display:block; overflow:hidden;}
+.order-enter a.enbuy-btn,
+.order-enter a.change-btn{ display:block; height:.82rem; line-height:.82rem; text-align:center; border-radius:0.1rem;}
+
+
+
+

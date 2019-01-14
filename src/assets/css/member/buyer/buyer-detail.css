@@ -1,0 +1,122 @@
+.color-d82{
+    color: #d82121;
+}
+.trading-state{
+    padding: 0.15rem 0.25rem 0.15rem 0.3rem;
+    background-color: #0090ff;
+    overflow: hidden;
+    display: block;
+    height: auto;
+}
+.trading-state .state-left i{
+    width: 0.48rem;
+    height: 0.4rem;
+    display: inline-block;
+    margin: 0.15rem 0.2rem 0.15rem 0rem;
+}
+.trading-state .state-left i.icon-state01{
+    background: url(../../../images/icon/icon-dfk.png) center no-repeat;
+    background-size: 100%;
+}
+.trading-state .state-left i.icon-state02{
+    background: url(../../../images/icon/icon-jyqx.png) center no-repeat;
+    background-size: 100%;
+}
+.trading-state .state-left i.icon-state03{
+    background: url(../../../images/icon/icon-jywc.png) center no-repeat;
+    background-size: 100%;
+}
+.trading-state .state-left i.icon-state04{
+    background: url(../../../images/icon/icon-jyz.png) center no-repeat;
+    background-size: 100%;
+}
+.trading-state .state-left .state-text{
+    line-height: 0.7rem;
+}
+.trading-state .state-right .state-title{
+    line-height: 0.35rem;
+    display: block;
+    color: #fefefe;
+    max-width: 3.96rem;
+    overflow: hidden;
+}
+.trading-state .state-right .state-time{
+    line-height: 0.35rem;
+    display: block;
+    text-align: right;
+    color: #fefefe;
+}
+.content{
+    height: auto;
+    display: block;
+    overflow: hidden;
+}
+.content .content-list{
+    height: auto;
+    display: block;
+    overflow: hidden;
+    
+    padding: 0.1rem 0rem;
+}
+.content .content-list .content-item{
+    overflow: hidden;
+    display: block;
+    height: auto;
+} 
+.content .content-list .content-item span.title{
+    width: 1.55rem;
+    text-align: right;
+    display: block;
+    line-height: 0.65rem;
+}
+.content .content-list .content-item em.order{
+    display: block;
+    line-height: 0.65rem;
+} 
+.content .content-list .content-item a.copy{
+    padding: 0.12rem 0.2rem;
+    border-radius: 0.02rem;
+    border: 1px solid #cccccc;
+    display: inline-block;
+    margin-top: 0.05rem;
+}
+.all-href{
+    overflow: hidden;
+    display: block;
+    height: auto;
+    padding: 0.35rem 0rem;
+}
+.buy-href a{
+    width: 100%;
+    background-color:#d82121;
+    border-radius: 0.08rem;
+    height: 0.82rem;
+    line-height: 0.82rem;
+    display: block;
+    text-align: center;
+}
+.edit-href a{
+    width: 3.45rem;
+    height: 0.82rem;
+    text-align: center;
+    line-height: 0.82rem;
+    display: inline-block;
+    border: 1px solid #65686f;
+    border-radius: 0.08rem;
+    color: #252933;
+}
+.edit-href a.delete span{
+    padding-left: 0.45rem;
+    background: url(../../../images/icon/delete.png) left no-repeat;
+    background-size: 0.31rem;
+}
+.edit-href a.message span{
+    padding-left: 0.45rem;
+    background: url(../../../images/icon/xiaoxi.png) left no-repeat;
+    background-size: 0.31rem;
+}
+.edit-href a.money span{
+    padding-left: 0.45rem;
+    background: url(../../../images/icon/money.png) left no-repeat;
+    background-size: 0.31rem;
+}

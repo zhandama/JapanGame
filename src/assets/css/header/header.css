@@ -1,0 +1,45 @@
+/*首页头部*/
+.index-header{margin: 0 auto;background-color: #0090ff;padding: 0.2rem 0.25rem 0rem 0.25rem;z-index: 1;}
+.index-header .index-top{overflow: hidden;display: block;height: auto;}
+.index-header .index-header-logo{position: absolute;left: 0;min-width: 10%;}
+.index-header .index-header-logo span{width: 100%;display: inline-block;background: url(../../images/icon/kefu.png) 0.35rem no-repeat;height: 0.42rem;background-size: 0.4rem;}
+.index-header .index-header-middle{width: 100%;text-align: center;float: left;}
+.index-header .index-header-middle span{display: inline-block;line-height: 0.45rem;}
+.index-header .index-header-middle span i{display: inline-block;background: url(../../images/icon/game-icon.png) center no-repeat;width: 0.46rem;height: 0.31rem;background-size: 100%;margin: 0.09rem 0.1rem 0rem 0rem;}
+.index-header .index-header-middle span.treegame{ height:.45rem; background:url(../../images/icon/treegame.png) no-repeat 0 center; display:inline-block; width:1.82rem; background-size:100%;}
+
+.index-header .index-header-right{position: absolute;right: 0.25rem;min-width: 10%;top: 0;}
+.index-header .index-header-right span{line-height: 0.9rem;}
+.index-header .index-search{padding: 0.25rem 0rem;text-align: center;}
+.index-header .index-search .index-input{width: 100%;height: 0.66rem;line-height: 0.66rem;border-radius: 0.1rem;}
+.index-header .index-search .index-input span{color: #6b707c;}
+
+
+/*公用头部*/
+.japan-header .detail-top{width: 100%;max-width: 768px;margin: 0 auto;position: relative;line-height: .96rem;z-index: 50;}
+.japan-header .detail-top .top-back{position: absolute;left: 0;min-width: 10%;height: .96rem;}
+.japan-header .detail-top .top-back a{display: inline-block;min-width: .55rem;width: 100%;height: .96rem;text-indent: -9999px;background: url(../../images/icon/return.png) .35rem center no-repeat;background-size: .19rem;}
+.japan-header .detail-top h2{max-width: 80%;margin-left: auto;margin-right: auto;height: .96rem;line-height: .96rem;text-align: center;white-space: nowrap;overflow: hidden;-webkit-margin-before: 0;-webkit-margin-after: 0; font-weight:bold;}
+.japan-header .detail-top .top-right{position: absolute;top: 0;right: 0.15rem;min-width: 10%;font-size: 0;height: .96rem;line-height: .96rem;-webkit-text-size-adjust: none;text-align: right;}
+.japan-header .detail-top .top-right a.switch{display: inline-block;height: .96rem;width: 100%;text-indent: -9999px;background: url(../../images/icon/wenhao.png) center no-repeat;background-size: .36rem;}
+.japan-header .detail-top .top-right a.jpshare{display: inline-block;height: .96rem;width: 100%;text-indent: -9999px;background: url(../../images/icon/jpshare.png) center center no-repeat;background-size: .4rem auto;}
+
+/*右侧弹窗*/
+.screem-boxs{ position:absolute; top:0.6rem;; right:0.2rem; width:2.36rem; line-height: normal;}
+.screem-boxs .more-chart{ width: 0;height: 0;border-left: 0.15rem solid transparent; border-right:  0.15rem solid transparent; border-bottom: 0.13rem solid #000;filter:alpha(opacity=80);-moz-opacity:.8;-khtml-opacity:.8;opacity:.8; margin-right:0.18rem; }
+.screem-boxs .more-handle{ width:2.36rem; height:auto; filter:alpha(opacity=80);-moz-opacity:.8;-khtml-opacity:.8;opacity:.8; border-radius:0.1rem; margin-top:0.12rem;}
+.screem-boxs .more-handle span{ display:block; height:0.88rem; line-height:0.88rem; border-top:1px solid #5d5d5d;}
+.screem-boxs .more-handle span:first-child{ border-top:none;}
+.screem-boxs .more-handle span em{ display:block; padding-left:0.68rem;}
+.screem-boxs .more-handle span em.notice{ background:url(../../images/icon/notice-ico.png) no-repeat 0.15rem center; background-size:.33rem; }
+.screem-boxs .more-handle span em.station{ background:url(../../images/icon/station-ico.png) no-repeat 0.15rem center; background-size:.33rem; }
+
+
+
+/*商品为空*/
+.list-empty{ height:auto; display:block; overflow:hidden;}
+.list-empty .empty-pic{ height:.92rem; background:url(../../images/list-empty.png) no-repeat center center; background-size:1.78rem;}
+
+
+
+

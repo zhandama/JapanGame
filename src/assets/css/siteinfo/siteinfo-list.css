@@ -1,0 +1,16 @@
+/*帮助中心*/
+.siteinfo-main{ height:auto; display:block; overflow:hidden;}
+.siteinfo-main .site-boxs{ height:auto; display:block; overflow:hidden;}
+.siteinfo-main .site-boxs .boxs-lg{ display:block; height:3.08rem; background:url(../../images/icon/boxs-lg.png) no-repeat center center; background-size:1.28rem 1.77rem;}
+
+.siteinfo-main .site-info{ height:auto; display:block; overflow:hidden;}
+.siteinfo-main .site-info .site-list{ height:1.08rem;}
+.siteinfo-main .site-info .site-list span.name{ display:inline-block; height:1.08rem; line-height:1.08rem;}
+.siteinfo-main .site-info .site-list i.rgt-ico{ height:1.08rem; width:0.74rem; background:url(../../images/icon/right03.png) no-repeat center center; background-size:0.13rem 0.25rem;}
+
+
+.privacy-boxs{ height:auto; display:block; overflow:hidden; border-radius:0.1rem;}
+.privacy-boxs .pv-text{ line-height:0.5rem; padding:0.2rem 0.3rem;}
+.privacy-boxs .pv-text h2{ line-height:0.6rem; font-size:0.32rem; font-weight:bold; padding-bottom:0.1rem;}
+.privacy-boxs .pv-text span{ display:block; line-height:0.6rem;}
+.privacy-boxs .pv-text p{ padding-bottom:0.15rem;}

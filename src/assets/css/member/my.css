@@ -1,0 +1,164 @@
+.index-header-right .kefu{
+    width: 100%;
+    display: inline-block;
+    background: url(../../images/icon/kefu.png) 0.35rem no-repeat;
+    height: 0.42rem;
+    background-size: 0.4rem;
+    line-height: 0.96rem;
+    height: 0.96rem;
+}
+.comment{
+    height: auto;
+    overflow: hidden;
+    display: block;
+}
+.member-list-user{
+    box-sizing: border-box;
+    padding: .2rem 0.3rem;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background-color: #0090ff;
+}
+.member-list-user .list-left-user img {
+    float: left;
+    width: 1.04rem;
+    height: 1.04rem;
+    border: 0.04rem solid #fff;
+    border-radius: 0.08rem;
+}
+.member-list-user .list-left-user span {
+    float: left;
+    padding-left: .27rem;
+    padding-top: .22rem;
+}
+.member-list-user .list-left-user span em {
+    display: block;
+    line-height: 1.6;
+}
+.member-list-user .list-right-user {
+    width: .48rem;
+}
+.member-list-user .list-right-user span.right{
+    display: block;
+    background: url(../../images/icon/right02.png) center no-repeat;
+    height: 0.9rem;
+    width: .48rem;
+    background-size: .13rem;
+}
+.member-list-user .coins{
+    height: 1.18rem;
+    width: 7.08rem;
+    background: url(../../images/icon/message-bg.png) center no-repeat;
+    margin: 0.4rem 0 0.1rem 0;
+    overflow: hidden;
+    display: block;
+    background-size: 100%;
+}
+.member-list-user .coins .coins-left span{
+    height: 0.68rem;
+    width: 0.71rem;
+    background: url(../../images/icon/jinb.png) center no-repeat;
+    display: inline-block;
+    margin: 0.2rem 0.3rem 0rem 0.35rem;
+}
+.member-list-user .coins .coins-middle{
+    margin-top: 0.2rem;
+}
+.member-list-user .coins .coins-middle span{
+    line-height: 0.3rem;
+    display: block;
+}
+.member-list-user .coins .coins-middle em{
+    display: block;
+    line-height: 0.35rem;
+    color: #d82121;
+	font-weight:bold;
+	margin-top:0.04rem;
+}
+
+.member-list-user .coins .coins-right span{
+    float: left;
+    line-height: 1.08rem;
+}
+.member-list-user .coins .coins-right i.right{
+    display: inline-block;
+    background: url(../../images/icon/right03.png) center no-repeat;
+    height: 0.25rem;
+    width: 0.13rem;
+    background-size: 100%;
+    float: left;
+    margin-right: 0.3rem;
+    margin: 0.45rem 0.3rem 0rem 0.25rem;
+}
+.member-list {
+    line-height: 1rem;
+    overflow: hidden;
+    display: block;
+    height: auto;
+}
+.member-list .list-left {
+    width: 15%;
+}
+.member-list .list-left span.new-icon{
+    width: 0.41rem;
+    height: 0.39rem;
+    display: inline-block;
+    margin: 0.32rem 0rem 0rem 0.4rem;
+    float: left;
+}
+.member-list .list-left .new-icon01 {
+    background: url(../../images/icon/shanp.png) 0 no-repeat;
+    background-size: 100%;
+}
+.member-list .list-left .new-icon02 {
+    background: url(../../images/icon/shopping.png) 0 no-repeat;
+    background-size: 100%;
+}
+.member-list .list-left .new-icon03 {
+    background: url(../../images/icon/like01.png) 0 no-repeat;
+    background-size: 100%;
+}
+.member-list .list-left .new-icon04 {
+    background: url(../../images/icon/time.png) 0 no-repeat;
+    background-size: 100%;
+}
+.member-list .list-left .new-icon05 {
+    background: url(../../images/icon/problem.png) 0 no-repeat;
+    background-size: 100%;
+}
+.member-list .list-left .new-icon06 {
+    background: url(../../images/icon/consult.png) 0 no-repeat;
+    background-size: 100%;
+}
+.member-list .list-left .new-icon07 {
+    background: url(../../images/icon/website.png) 0 no-repeat;
+    background-size: 100%;
+}
+
+.member-list .list-right{
+    width: 85%;
+    background: none;
+}
+.list-right i{
+    background: url(../../images/icon/right03.png) 100% no-repeat;
+    margin-right: .3rem;
+    padding-left: .45rem;
+    display: inline;
+    background-size: .13rem;
+}
+.notlogin{
+    overflow: hidden;
+    display: block;
+    background-color: #0090ff;
+    padding: 0.3rem 0rem 0.5rem 0rem;
+    text-align: center;  
+}
+.notlogin a{
+    width: 2.9rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    border: 0.02rem solid #fff;
+    display: inline-block;
+    border-radius: 0.08rem;
+}

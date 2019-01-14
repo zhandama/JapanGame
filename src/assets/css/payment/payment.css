@@ -1,0 +1,30 @@
+/*支付方法*/
+.jpdetail-payment{height:auto; display:block; overflow:hidden;}
+.jpdetail-payment .payment-info{ height:auto; display:block; overflow:hidden;}
+.jpdetail-payment .payment-info .paymode-pic{ height:6.03rem; text-align:center; }
+.jpdetail-payment .payment-info .paymode-pic img{ height:100%;}
+.jpdetail-payment .payment-info .paymode-txt{ line-height:0.5rem;}
+
+/*下单支付*/
+.order-payment{height:auto; display:block; overflow:hidden;}
+.order-payment .orderpay-info {height:auto; display:block; overflow:hidden;}
+.order-payment .orderpay-info .ordmode{height:auto; display:block; overflow:hidden;}
+.order-payment .orderpay-info .ordmode li{ width:30%;height:1.4rem;display:block; overflow:hidden; border:1px solid #e8e8e8; border-radius:0.1rem;}
+.order-payment .orderpay-info .ordmode li.active{ border-color:#d82121; background:url(../../images/icon/paypal-bj.png) no-repeat right bottom; background-size:.3rem;}
+.order-payment .orderpay-info .ordmode li a{ height:1.4rem; display:block; width:100%; background-size:1.29rem; }
+.order-payment .orderpay-info .ordmode li .paypal{ height:1.4rem; display:block; width:100%;background:url(../../images/paypal.png) no-repeat center center; background-size:1.29rem; }
+
+.order-payment .orderpay-info .ordtips{height:auto; display:block; overflow:hidden; border-radius:0.1rem;}
+.order-payment .orderpay-info .ordtips p{ line-height:0.42rem;}
+
+
+
+
+
+
+
+
+
+
+
+

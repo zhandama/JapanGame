@@ -1,0 +1,39 @@
+.japan-titl {
+    height: 0.9rem;
+    overflow: hidden;
+}
+.japan-titl span {
+    display: block;
+    line-height: 0.9rem;
+    background: url(../../../images/icon/arret.png) no-repeat left center;
+    background-size: auto 0.3rem;
+    color: #49607b;
+}
+.cause-refund{
+    height: auto;
+    display: block;
+    overflow: hidden;
+}
+.cause-refund .cause-textarea{
+    resize: none;
+    height: 3rem;
+    width: 100%;
+    border: none;
+    padding: 0.1rem 0.25rem 0.1rem 0.5rem;
+}
+.submit{
+    height: auto;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    padding: 0.25rem 0.3rem;
+}
+.submit a.submit-info{
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    background-color: #0090ff;
+    text-align: center;
+    display: inline-block;
+    border-radius: 0.08rem;
+}

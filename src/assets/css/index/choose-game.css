@@ -1,0 +1,18 @@
+.search-game{height: auto;display: block;overflow: hidden;}
+.search-game .tab{height: auto;display: block;overflow: hidden;}
+.search-game .tab .tab-head{height: auto;display: block;overflow: hidden;}
+.search-game .tab .tab-nav{height: auto;display: block;overflow: hidden;}
+.search-game .tab .tab-nav li{float: left;width: 50%;text-align: center;position: relative;}
+.search-game .tab .tab-nav li a{width: 100%;float: left;box-sizing: border-box;font-size: .32rem;color: #000;line-height: 0.95rem;text-align: center;}
+.search-game .tab .tab-nav li .line{width: 0.5rem;height: 0.06rem;display: none;background: url(../../images/icon/line-bg.png) center no-repeat;background-size: 100%;position: absolute;bottom: 0rem;left: 45%;}
+.search-game .tab .tab-nav li.active .line{display: inline-block;}
+.search-game .tab .tab-nav .active a{cursor: default;color: #0090ff;}
+.search-game .tab .tab-nav li a span{display: inline-block;padding-left: 0.52rem;}
+.search-game .tab .tab-nav li a span.sj{background: url(../../images/icon/shouji-gray.png) left center no-repeat;background-size: .38rem;}
+.search-game .tab .tab-nav li.active a span.sj{background: url(../../images/icon/shouji.png) left center no-repeat;background-size: .38rem;}
+.search-game .tab .tab-nav li a span.dn{background: url(../../images/icon/diannao-gray.png) left center no-repeat;background-size: .38rem;}
+.search-game .tab .tab-nav li.active a span.dn{background: url(../../images/icon/diannao.png) left center no-repeat;background-size: .38rem;}
+
+
+
+

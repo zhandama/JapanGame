@@ -1,0 +1,49 @@
+/*底部*/
+.newfooter{float:left; width:100%;border-top:1px solid #ccc; background:#ffffff; font-size:.2rem; text-align:center; z-index:20;line-height: 0rem !important;}
+.newfooter ul li{float:left; padding:0; margin:0; border:0;width:25% !important; font-weight:normal !important;position: relative; color:#343132;}
+.newfooter ul li a{color:#5f646e; display:inline-block; width:100%;}
+.newfooter ul li span{ display: block;line-height: .42rem;padding-top: .55rem;}
+.newfooter ul .active{color: #0090ff;}
+.newfooter ul li .i_home{background: url(../../images/icon/m_home.png) no-repeat center .1rem ; background-size: .47rem;}
+.newfooter ul .active .i_home{background: url(../../images/icon/mred_home.png) no-repeat center .1rem ; background-size: .47rem; }
+/* .newfooter ul li .i_mysell{ background: url(../../images/icon/membersell_logo.png) no-repeat center .1rem ;  background-size: .47rem; } */
+.newfooter ul .active .i_mysell{ background: url(../../images/icon/redsell_logo.png) no-repeat center .1rem ;  background-size: .47rem; }
+.newfooter ul li .i_message{ background: url(../../images/icon/message.png) no-repeat center .1rem ;  background-size: .47rem; }
+.newfooter ul .active .i_message{ background: url(../../images/icon/redmessage.png) no-repeat center .1rem ; background-size: .47rem; }
+.newfooter ul li .i_tx{ background: url(../../images/icon/touxiang.png) no-repeat center .1rem ;  background-size: .47rem; }
+.newfooter ul .active .i_tx{ background: url(../../images/icon/redtx.png) no-repeat center .1rem ;  background-size: .47rem; }
+.newfooter .tsme{display:none; top: .05rem;left: 55%;border: 1px solid #fff;position:absolute;font-size:.2rem;line-height:.3rem;color:#fff; text-align:center; white-space:nowrap; vertical-align:baseline; background-color:#ff6600; border-radius:2em;width: .3rem;}
+.newfooter ul li .i_redDot {display: inline-block;width: 0.18rem;height: 0.18rem;background: #ff6600;border-radius: 100%;position: absolute;top: 0.1rem;left:61%; padding-top:0;}
+.newfooter ul li{ width:20% !important;}
+.newfooter ul li .i_mybuy{background: url(../../images/icon/m_mybuy.png) no-repeat center .1rem ; background-size: .47rem;}
+.newfooter ul .active .i_mybuy{background: url(../../images/icon/redsell_logo.png) no-repeat center .1rem ; background-size: .47rem; }
+.newfooter li.data-buy .i_newsell{position: absolute;top: -0.57rem;left: 0.2rem;width: 1.28rem;height: 1.28rem;background: url(../../images/icon/radius-roll.png) no-repeat center;background-size: 100%;z-index: 21;line-height: 1.55rem;}
+.newfooter ul li .i_redmessage{display: inline-block;width: 0.18rem;height: 0.18rem;background: #f23030;border-radius: 100%;position: absolute;top: 0.05rem;left: 58%;padding-top: 0;}
+
+
+/* 首页底部修改2018-10-23 */
+/* .newfooter{
+    border-top:1px solid #ccc; 
+}
+.newfooter li.data-buy .i_newsell{
+    position: absolute;
+    top: -0.55rem;
+    left: 0.2rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../../images/icon/radius-roll.png) no-repeat center;
+    background-size: 100%;
+    z-index: 21;
+    line-height: 1.55rem;
+}
+.newfooter ul li .i_redmessage{
+    display: inline-block;
+    width: 0.18rem;
+    height: 0.18rem;
+    background: #f23030;
+    border-radius: 100%;
+    position: absolute;
+    top: 0.05rem;
+    left: 58%;
+    padding-top: 0;
+} */

@@ -1,0 +1,34 @@
+.jpscreen-info{ height:auto; display:block; overflow:hidden;}
+.jpscreen-info .screen-titl{ height:0.48rem; line-height:0.48rem;}
+.jpscreen-info .screen-titl span.current{ background:url(../../images/icon/arret.png) no-repeat left center; background-size:auto 0.3rem;}
+
+.screen-keyword{ height:auto; display:block; overflow:hidden;}
+.screen-keyword .keyword-conn{height:auto; display:block; overflow:hidden;}
+.screen-keyword .keyword-conn span{ display:inline-block; height:0.5rem; line-height:0.5rem;}
+
+.screen-price{height:auto; display:block; overflow:hidden;}
+.screen-price .price-boxs{height:auto; display:block; overflow:hidden;}
+.screen-price .price-boxs .price-titl{ height:0.65rem; line-height:0.65rem;}
+.screen-price .price-boxs .price-conn{ height:0.6rem;}
+.screen-price .price-boxs .price-conn .pcecnn-flow { height:0.6rem; position:relative;}
+.screen-price .price-boxs .price-conn .pcecnn-flow em.xian01{ width:100%; height:0.1rem; border-radius:0.3rem; margin-top:0.25rem;background-color:#cccccc;}
+.screen-price .price-boxs .price-conn .pcecnn-flow i.dem02{ width:0.6rem; height:0.6rem; background:url(../../images/icon/run-yuan.png) no-repeat right center; background-size:100%; position:absolute; right:0;}
+.screen-price .price-boxs .price-conn .pcecnn-flow i.dem01{ width:0.6rem; height:0.6rem;  background:url(../../images/icon/run-yuan.png) no-repeat right center; background-size:100%; position:absolute; right:0;}
+
+.screen-price .price-boxs .price-conn .pcecnn-flow .flow-run{ position:absolute; top:0; left:0; width:100%; height:0.6rem;}
+.screen-price .price-boxs .price-conn .pcecnn-flow .flow-conn{ position:absolute; height:0.6rem; width:3%; z-index:1;padding-left: .6rem}
+.screen-price .price-boxs .price-conn .pcecnn-flow .flow-tenp{ width: 100%;display: inline-block;float: left;height: 0.6rem;position: absolute;padding-left: .6rem}
+.screen-price .price-boxs .price-conn .pcecnn-flow .xian02{ height:0.1rem; background-color:#cccccc;margin-top:0.25rem; width:100%; display:inline-block;border-radius:0.3rem; }
+.screen-price .price-boxs .price-conn .pcecnn-flow .xian03{ height:0.1rem; background-color:#0090ff;margin-top:0.25rem; width:100%; display:inline-block;border-radius:0.3rem;}
+
+
+
+.grade-conn{height:auto; display:block; overflow:hidden; padding-top:0.05rem;}
+.grade-conn ul li{ height:auto; overflow:hidden; width:46.5%; margin-right:3.5%;}
+.grade-conn ul li span{ display:block; line-height:0.72rem; height:0.72rem; text-align:center; border-radius:0.1rem; color:#000;}
+.grade-conn ul li.active span{ border-color:#0090ff; background:#f8fcff url(../../images/icon/choose-ico.png) no-repeat right bottom; background-size:0.36rem; color:#0090ff;}
+
+.screen-enter{height:auto; display:block; overflow:hidden; }
+.screen-enter .screen-btn{ display:block; height:0.95rem; line-height:0.95rem; text-align:center;}
+/* 新增修改input */
+.keyword-conn input.keybord-input{border: none;background-color: transparent;height: 0.5rem;line-height: 0.5rem;width: 80%;}

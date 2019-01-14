@@ -1,0 +1,25 @@
+.index-record{height: auto;display: block;overflow: hidden;}
+.index-record .record-titl{height: 0.9rem;line-height: 0.9rem;background: url(../../images/icon/arret.png) no-repeat left center;background-size:auto 0.3rem;padding-left: 0.2rem;width: 70%;margin-left: 0.25rem; font-weight:bold;}
+.index-record .record-conn{height: auto;display: block;overflow: hidden;}
+.index-record .record-conn .demolist{height: auto;display: block;overflow: hidden;position: relative;}
+.record-conn .demolist .mbgmes-img{width: 1.6rem;overflow: hidden;position: relative;height: 1.6rem;line-height: 1.6rem;background: #252933; text-align:center;}
+.record-conn .demolist .mbgmes-img img{height: 1.6rem;vertical-align:middle;}
+.record-conn .demolist .mbgmes-img div.img-text{width: 0.32rem;height: 0.32rem;line-height: 0.32rem;position: absolute;top: 0;left: 0;}
+.record-conn .demolist .mbgmes-img div.ke{background-color: #ffb311;}
+.record-conn .demolist .mbgmes-img div.dai{background-color: #0ebeb4;}
+.record-conn .demolist .mbgmes-img div.soid{background-color: #d82121;width:0.8rem;}
+.record-conn .demolist .mbgmes-con{height: auto;display: block;overflow: hidden;}
+.record-conn .demolist .mbgmes-con .mbl-title{position: relative;line-height: 0.38rem;}
+.record-conn .demolist .mbgmes-con .mbl-title span{max-width: 4.6rem;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;}
+.record-conn .demolist .mbgmes-con .mbl-title .like{position: absolute;right: 0rem;top: 0.1rem;text-align: center;}
+.record-conn .demolist .mbgmes-con .mbl-title .like i{width: 0.32rem;height: 0.29rem;background: url(../../images/icon/like.png) center no-repeat;background-size: 100%;display: inline-block;}
+.record-conn .demolist .mbgmes-con .mbl-title .active i{background: url(../../images/icon/like-hover.png) center no-repeat;background-size: 100%;}
+.record-conn .demolist .mbgmes-con .mbl-title .like em{font-family: "Arial";display: block;}
+.record-conn .demolist .mbgmes-con .mbl-cper{height: auto;display: block;overflow: hidden;line-height: 0.5rem;color: #d82121;font-weight: bold;}
+.record-conn .demolist .mbgmes-con .mbl-parea{line-height: 0.32rem;color: #777777;}
+.record-conn .demolist .mbgmes-con .mbl-hotpot{height: auto;display: block;overflow: hidden; margin-top:0.08rem;}
+.record-conn .demolist .mbgmes-con .mbl-hotpot .pthot{ height:0.32rem; line-height:0.32rem; color:#777777; min-width: 2.66rem; display:inline-block;}
+
+/*更多*/
+.tab-more{ height:auto; display:block; overflow:hidden; text-align: center;}
+.tab-more a{width: 5rem;height: 0.66rem;line-height: 0.66rem;display: inline-block;background-color: #f0f8ff;border-radius: 0.5rem;color: #2e599c; margin-left:-0.25rem;}

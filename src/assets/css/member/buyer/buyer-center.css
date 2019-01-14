@@ -1,0 +1,23 @@
+.new-buyer-nav .jpnav {
+    width: 33.3% !important;
+    color: #000;
+}
+.click-btn{
+    height: auto;
+    overflow: hidden;
+    display: block;
+    padding: 0.2rem 0.15rem 0.2rem 0rem;
+}
+.click-btn a{
+    padding: 0.2rem 0.1rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.08rem;
+    display: inline-block;
+    margin-left: 0.2rem;
+}
+.click-btn a.buy{
+    border: none;
+}
+.click-btn span.text{
+    padding: 0.2rem 0rem;
+}
