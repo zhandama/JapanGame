@@ -31,6 +31,7 @@ export default {
   },
   mounted(){
     this.$bus.emit("title", '個人情報')
+    this.$bus.emit("showTopRight", true)
   },
   computed: {
     ...mapState({
@@ -42,7 +43,7 @@ export default {
   methods: {
     isDialog () {
       this.$dialog.confirm({
-        message: 'サインアウトしてもよろしいですか？',
+        message: 'サインアウトしてよろしでしょうか', // 退出登录
         confirmButtonText:'はい',
         cancelButtonText:'いいえ'
       }).then(() => {

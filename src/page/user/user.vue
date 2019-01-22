@@ -3,7 +3,7 @@
     <!-- 头部 -->
     <div class="index-header fixed-top">
       <div class="index-top pb-30">
-        <router-link :to="{name:'Chat'}">
+        <router-link :to="{name:'Help'}">
         <div class="index-header-logo">
           <span class="kefu" ></span>
         </div>

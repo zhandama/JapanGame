@@ -53,7 +53,7 @@ export default {
         fuzzyValue: '', // 关键字模糊匹配
         gameId: this.$route.query.gameId,
         goodsType: 1, // 商品类型 1:账号 2:金币 3:租赁
-        // orderByCode: 5, // 0:默认 出售中在前 1:价格升序 2:价格降序 3:被收藏数量升序排序 4:被收藏数量降序排序 5:最近发布排序 6:最早发布排序
+        orderByCode: 5, // 0:默认 出售中在前 1:价格升序 2:价格降序 3:被收藏数量升序排序 4:被收藏数量降序排序 5:最近发布排序 6:最早发布排序
         page: 0,
         prices: [],
         size: 10
@@ -82,10 +82,11 @@ export default {
         show: false,
         list:[]
       },
-      dialog_cover: false
+      dialog_cover: false,
+      fromName:''
     }
   },
-  activated () { // 初始化页面
+  activated () { // 缓存初始化页面
     this.$bus.emit("title", this.$route.query.gameName)
     this.$bus.emit("showTopRight", true)
     if (this.params.gameId!=this.$route.query.gameId) {
@@ -94,7 +95,11 @@ export default {
       this.init()
     }
   },
-  mounted () {
+  beforeRouteLeave(to, from, next) {
+    from.meta.keepAlive = false;
+    next();
+  },
+  mounted () { // 初始化页面
     this.$bus.emit("title", this.$route.query.gameName)
     this.$bus.emit("showTopRight", true)
     this.params.gameId = this.$route.query.gameId
@@ -114,7 +119,6 @@ export default {
         this.params.page ++
         this.getList()
       } else {
-        console.log('到底了')
         this.finished = true
         this.loading = false
       }
@@ -125,7 +129,6 @@ export default {
         this.params.page = 0
         this.total = 0
       }
-      console.log(JSON.stringify(this.params))
       this.$api.goods.list(this.params).then((res) => {
         this.loading = false
         this.refreshing = false

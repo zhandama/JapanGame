@@ -8,7 +8,7 @@
           </div>
           <div class="control-input mb-25">
               <i class="icon-mm fl"></i>
-              <input type="password" class="fl f30" placeholder="パスワード" v-model="params.password" maxlength="18">
+              <input type="password" class="fl f30" onpaste="return false" placeholder="パスワード" v-model="params.password" maxlength="18">
           </div>
           <div class="control-input mb-20">
               <i class="icon-tx fl"></i>
@@ -74,8 +74,6 @@ export default {
               this.$router.push({name:'EmailVerif',query:{account:this.params.account}})
             }
           })
-        } else {
-          this.$toast(res.message)
         }
       })
     }

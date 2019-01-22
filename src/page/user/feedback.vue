@@ -71,16 +71,16 @@ export default {
     },
     submit () {
       if (this.params.viewTheme.length <= 0) {
-        this.$toast('問題のタイプを選択してください')
+        this.$toast('問題を選んでください') // 请选择问题类型
         return
       }
       if (this.params.viewContent.length <= 0) {
-        this.$toast('内容を記入してください')
+        this.$toast('内容を入力してください') // 请填写内容
         return
       }
       this.params.mailAddress = this.userInfo.account
       this.$api.user.feedback(this.params).then(res => {
-        this.$toast('送信しました')
+        this.$toast('送信成功しました') // 提交成功
         setTimeout(()=>{
           this.$router.push({name:'User'})
         },2000)

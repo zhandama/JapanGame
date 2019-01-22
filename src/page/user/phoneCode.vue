@@ -31,18 +31,16 @@ export default {
       var mobileReg1 = /(^0{0,1}1[3|4|5|7|8|9][0-9]{9}$)/;  // 中国手机号
       var mobileReg = /^(\+?81|0)\d{1,4}[ \-]?\d{1,4}[ \-]?\d{4}$/  // 日本手机号
       if (this.phoneNum.length==0) {
-        this.$toast('電話番号を記入してください')
+        this.$toast('携帯番号を入力してください') // 请输入您的手机号码
         return
       } else if (!mobileReg.test(this.phoneNum)&&!mobileReg1.test(this.phoneNum)) {
-        this.$toast('電話番号の形式が正しくありません')
+        this.$toast('正しい携帯番号を入力してください') // 手机号码格式不正确
         return
       }
       this.$api.user.sendsms({phoneNum:this.phoneNum}).then(res=> {
         if (res.code==='00') {
-          this.$toast('正常に送信されました')
+          this.$toast('認証コード送信されました') // 短信发送成功
           this.$router.push({name:'PhoneVerif',query:{phoneNum:this.phoneNum}})
-        } else {
-          this.$toast(res.message)
         }
       })
     }

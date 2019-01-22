@@ -2,7 +2,7 @@
  * @Author: tangxm
  * @Date: 2018-11-23 15:07:06
  * @LastEditors: tangxm
- * @LastEditTime: 2018-12-26 15:51:04
+ * @LastEditTime: 2019-01-16 12:37:28
  */
 import Vue from 'vue'
 
@@ -46,6 +46,9 @@ function upper(params) {
 function similarList(params) {
   return vm.$http.get(accountGoods + 'similar/list', {params:params})
 }
+function browseDelete(params) {
+  return vm.$http.post(accountGoods + 'browse/delete', params)
+}
 
 export default {
   browseIndex,
@@ -59,5 +62,6 @@ export default {
   update,
   shelf,
   upper,
-  similarList
+  similarList,
+  browseDelete
 }

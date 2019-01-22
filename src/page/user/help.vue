@@ -18,7 +18,7 @@
                 <div class="help-list border-bottom py-25 pr-25">
                     <div class="help-upic fl help-upic1">
                       <!-- <i :class="['hpico0'+(index-1+2)]"></i> -->
-                      <img :src="item.imageUrl" />
+                      <i class="hpico"><img :src="item.imageUrl" /></i>
                     </div>
                     <div class="help-conn">
                         <div class="help-titl f32 color-000 fontbold">{{item.consultTitle}}</div>
@@ -34,7 +34,7 @@
           <router-link :to="{name:'Chat'}">
             <li class="pl-25 bg-fff">
                 <div class="help-list py-25 pr-25">
-                    <div class="help-upic fl"><i class="hpico07"></i></div>
+                    <div class="help-upic fl"><i class="hpico"><img src="~img/icon/help-u07.png"></i></div>
                     <div class="help-conn">
                         <div class="help-titl f32 color-000 fontbold">オンラインサービス</div>
                         <div class="help-ptxt f24">こんにちは、何かお手伝いしますか。</div>
@@ -73,6 +73,4 @@ export default {
 </script>
 <style>
 @import '~css/common/help.css';
-.help-upic1 {padding:.2rem}
-.help-upic1 img{width:100%}
 </style>

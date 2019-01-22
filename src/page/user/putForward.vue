@@ -76,7 +76,7 @@
           <a @click="putWithdraw()" class="sellbtn">申請する</a>
       </p>
       <p class="schedule">
-          <a href="" class="f24">入金スケジュールはこちら</a>
+          <router-link :to="{name:'Schedule'}" class="f24">入金スケジュールはこちら</router-link>
       </p>
   </div>
 </div>
@@ -197,13 +197,13 @@ export default {
       this.params.userId = this.userInfo.id
       this.params.bankName = this.bankChose.name
       if (this.params.withdrawAmount-this.params.serviceFee <= 0) {
-        this.$toast('現金引き出し額が低！')
+        this.$toast('最低入金可能額未満')
         return
       }
       if (this.$route.query.update) {
         this.$api.user.update(this.params).then(res=>{
           if (res&&res.data) {
-            this.$toast('操作が成功する')
+            this.$toast('操作が成功しました')
             setTimeout(() => {
               this.$router.push({name:'PutForwardHistory'})
             }, 2000)
@@ -212,7 +212,7 @@ export default {
       } else {
         this.$api.user.create(this.params).then(res=>{
           if (res&&res.data) {
-            this.$toast('操作が成功する')
+            this.$toast('操作が成功しました')
             setTimeout(() => {
               this.$router.push({name:'PutForwardHistory'})
             }, 2000)

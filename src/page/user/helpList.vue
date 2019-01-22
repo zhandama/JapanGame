@@ -6,7 +6,11 @@
         <ul style="min-height:5rem" v-if="list.length>0">
           <li class="pl-25 bg-fff" v-for="(item,index) in list" :key='index'>
               <div class="helplist-boxs">	
-                    <div class="helplist-titl border-bottom f28 color-000 fontbold pr-25" @click="open(item)"><i class="fr" :class="{'help-up':item.open,'help-down':!item.open}"></i>{{item.question}}</div>
+                    <div class="helplist-titl border-bottom" @click="open(item)">
+                      <span class="f28 color-000 fontbold mr-25 pr-25" :class="{'help-up':item.open,'help-down':!item.open}">
+                        {{item.question}}
+                      </span>
+                      </div>
                     <div class="helplist-conn border-bottom py-25 pr-25" v-show="item.open">
                       <div class="helplist-deta py-10 px-30">
                           <p class="f28 color-000" v-html="item.answer"></p>

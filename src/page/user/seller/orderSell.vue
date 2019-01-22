@@ -3,7 +3,7 @@
     <div class="jplist-nav bg-fff f30 mt-97 new-buyer-nav fixed-top border-bottom" style="z-index:1">
           <a class="jpnav fl" :class="{active:params.goodsQueryStatus==1}" @click="changeActive('1')">出品中</a>
           <a class="jpnav fl" :class="{active:params.goodsQueryStatus==2}" @click="changeActive('2')">取引中</a>
-          <a class="jpnav fl" :class="{active:params.goodsQueryStatus==3}" @click="changeActive('3')">売却済み</a>
+          <a class="jpnav fl" :class="{active:params.goodsQueryStatus==3}" @click="changeActive('3')">取引終了</a>
       </div>
       <van-pull-refresh
         v-model="refreshing"
@@ -21,10 +21,10 @@
                   <div class="click-btn ml-25 border-top">
                       <span class="text f28 fl color-666" v-if="params.goodsQueryStatus==2">{{item.goodsPayStatus==1?'未払い':'払いました'}}</span>
                       <span class="text f28 fl color-666" v-if="params.goodsQueryStatus==3">{{item.goodsStatus|sellFilter}}</span>
-                      <router-link :to="{name:'Create',query:{goodsId:item.goodsId}}" class="fr buy color-fff f28 bg-m2" v-if="item.goodsStatus==1||item.goodsStatus==4">編集する</router-link>
+                      <router-link :to="{name:'Create',query:{goodsId:item.goodsId}}" class="fr buy color-fff f28 bg-m2" v-if="item.goodsStatus==1">編集する</router-link>
                       <router-link :to="{name:'Chat',query:{goodsId:item.goodsId, otherId:item.buyerId}}" class="fr buy color-fff f28 bg-m2" v-if="item.goodsStatus==2">売り手に連絡する</router-link>
                       <a class="f28 color-666 fr" v-if="item.goodsStatus==1" @click="cancel(item)">取り消す</a>
-                      <a class="fr buy color-fff f28 bg-m2" v-if="item.goodsStatus==4" @click="upshelf(item)">上棚に売る</a>
+                      <a class="fr buy color-fff f28 bg-m2" v-if="item.goodsStatus==4" @click="upshelf(item)">出品</a>
                   </div>
               </div>
             </div>
@@ -99,13 +99,13 @@ export default {
         goodsId: item.goodsId
       }
       this.$dialog.confirm({
-        message: '上棚に売る？',
+        message: '出品してよろしいでしょうか', // 确认上架？
         confirmButtonText:'はい',
         cancelButtonText:'いいえ'
       }).then(() => {
         this.$api.goods.upper(params).then(res => {
           if (res&&res.code === '00') {
-            this.$toast('操作が成功する')
+            this.$toast('操作が成功しました')
             setTimeout(() => {
               this.changeActive('1')
             }, 2000)
@@ -120,13 +120,13 @@ export default {
         goodsId: item.goodsId
       }
       this.$dialog.confirm({
-        message: '下棚をはい？',
-        confirmButtonText:'はい',
-        cancelButtonText:'いいえ'
+        message: '下棚をはい？', // 确认下架？
+        confirmButtonText:'はい', // 确定
+        cancelButtonText:'いいえ' // 取消
       }).then(() => {
         this.$api.goods.shelf(params).then(res => {
           if (res&&res.code === '00') {
-            this.$toast('操作が成功する')
+            this.$toast('操作が成功しました')
             setTimeout(() => {
               this.changeActive('3')
             }, 2000)
@@ -141,13 +141,13 @@ export default {
     sellFilter (val) {
       var tip = ''
       if (val===1) {
-        tip = '販売中'
+        tip = '出品中' // 出售中
       } else if (val===2) {
-        tip = '取引中'
+        tip = '取引中'  // 交易中
       } else if (val===3) {
-        tip = '販売されている'
+        tip = '取引完了'  // 已售出
       } else if (val===4) {
-        tip = '段取り'
+        tip = '出品中止' // 下架
       }
       return tip
     }

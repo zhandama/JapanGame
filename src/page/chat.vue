@@ -72,6 +72,7 @@ export default {
       goodShow: true,
       goodsId: this.$route.query.goodsId||'',
       otherId:this.$route.query.otherId||'',
+      visitorIDCode: '',
       goodsInfo: '',
       selfChat: '',
       inputText: '',
@@ -82,11 +83,9 @@ export default {
       disabled:false,
       jsUrl: '//m.5173.com/js/NIM_Web_SDK_v4.0.0.js',
       Fingerprintjs: '//cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.0.6/fingerprint2.min.js',
-      murmur: ''
     }
   },
   async created () {
-    this.$bus.emit("title", 'チャット')
     this.$bus.emit("showTopRight", true)
     this.$bus.emit("topRightText", '')
     // this.init()
@@ -110,6 +109,7 @@ export default {
   },
   methods: {
     init (){
+      this.visitorIDCode = ''
       if (this.goodsId) {
         this.getGoodsInfo()
       } else {
@@ -121,25 +121,33 @@ export default {
     },
     jsLoadCallBack () {
       if (!this.isLogin) {
+        if (this.visitorIDCode) {
+          this.getAnonymousChat()
+        }
         return
       }
       this.init()
     },
-    FingerprintjsBack () {
+    async FingerprintjsBack () {
       var that = this
-      Fingerprint2.get(function(components) {
-        that.murmur = Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31)
-        if (!that.isLogin) {
-          console.log('调用登录匿名接口')
-        }
-      })
+      // if (!this.isLogin) {
+      //   await this.getUserInfo()
+      // }
+      if (!that.isLogin) {
+        Fingerprint2.get(function(components) {
+          that.visitorIDCode = Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31)
+          if (!that.selfChat) {
+            that.getAnonymousChat()
+          }
+        })
+      }
     },
     imInit () {  // 初始化聊天this.getHistoryMsgs()
       var that = this
       that.nim = SDK.NIM.getInstance({
         appKey: 'f83a4d869a4638548b7c15a174cbc38e ',
-        account: this.selfChat.fromAccid||this.selfChat.imAccount,
-        token: this.selfChat.fromToken||this.selfChat.imPassword,
+        account: this.selfChat.fromAccid||this.selfChat.imAccount||this.selfChat.visitorAccId,
+        token: this.selfChat.fromToken||this.selfChat.imPassword||this.selfChat.visitorToken,
         autoMarkRead: false,
         onconnect: function(opt){
           console.log('连接成功',opt)
@@ -176,6 +184,7 @@ export default {
     getServiceChat () {
       this.$api.user.serviceChat().then(res => {
         if (res && res.data) {
+          this.$bus.emit("title", 'オンラインサービス')
           this.selfChat = res.data
           this.imInit()
         } 
@@ -185,9 +194,20 @@ export default {
       this.$api.user.chattersInfo({toId:this.otherId||this.goodsInfo.sellerId}).then(res => {
         if (res && res.data && res.data.chatStatus==0) {
           this.selfChat = res.data
+          this.$bus.emit("title", res.data.toNickName)
           this.imInit()
         } else {
           this.getServiceChat()
+        }
+      })
+    },
+    getAnonymousChat () {
+      this.$api.user.chatAnonymousInfo({visitorIDCode:this.visitorIDCode}).then(res => {
+        if (res && res.data) {
+          this.selfChat = res.data
+          this.selfChat.toAccid = res.data.serviceImAccount
+          this.$bus.emit("title", 'オンラインサービス')
+          this.imInit()
         }
       })
     },
@@ -207,15 +227,24 @@ export default {
       if (this.inputText.length <=0) {
         return
       }
-      if (this.firstMsg&&this.goodsId) {
-        this.saveFirstMsg({
-          goodsId: this.goodsId,
-          onLineStatus: 0,
-          toId: this.otherId||this.goodsInfo.sellerId})
+      if (this.firstMsg) {
+        if (this.goodsId) {
+          this.saveFirstMsg({
+            goodsId: this.goodsId,
+            onLineStatus: 0,
+            toId: this.otherId||this.goodsInfo.sellerId
+          })
+        } else if (this.visitorIDCode) {
+          this.saveFirstMsg({
+            visitorIDCode: this.visitorIDCode
+          })
+        } else {
+          this.saveFirstMsg()
+        }
       }
       let params = {
         text: this.inputText,
-        from: this.selfChat.fromAccid.toLowerCase(),
+        from: (this.selfChat.fromAccid||this.selfChat.imAccount||this.selfChat.visitorAccId).toLowerCase(),
         to: this.selfChat.toAccid,
         type: 'text',
         time:new Date()-1
@@ -272,11 +301,25 @@ export default {
       })
     },
     saveFirstMsg (params) {
-      this.$api.user.chatFirst(params).then(res => {
-        if (res && res.data) {
-          this.firstMsg = false
-        }
-      })
+      if (params && params.goodsId) {
+        this.$api.user.chatFirst(params).then(res => {
+          if (res && res.data) {
+            this.firstMsg = false
+          }
+        })
+      } else if (params && params.visitorIDCode) {
+        this.$api.user.chatAnonymousFirst(params).then(res => {
+          if (res && res.data) {
+            this.firstMsg = false
+          }
+        })
+      } else {
+        this.$api.user.chatServiceFirst(params).then(res => {
+          if (res && res.data) {
+            this.firstMsg = false
+          }
+        })
+      }
     },
     onconnect (opt) {
       this.getHistoryMsgs()

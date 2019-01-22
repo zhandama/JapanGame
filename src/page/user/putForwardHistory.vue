@@ -82,13 +82,13 @@ export default {
         withdrawId: item.withdrawId
       }
       this.$dialog.confirm({
-        message: 'キャンセル？',
+        message: '入金申請をキャンセルしてよろしいでしょうか',
         confirmButtonText:'はい',
         cancelButtonText:'いいえ'
       }).then(() => {
         this.$api.user.refund(params).then(res=> {
           if (res&&res.code === '00') {
-            this.$toast('操作が成功する')
+            this.$toast('操作が成功しました')
             this.getList('init')
           }
         })

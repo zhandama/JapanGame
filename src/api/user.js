@@ -2,7 +2,7 @@
  * @Author: tangxm
  * @Date: 2018-11-23 15:07:06
  * @LastEditors: tangxm
- * @LastEditTime: 2019-01-09 16:36:55
+ * @LastEditTime: 2019-01-14 15:37:58
  */
 import Vue from 'vue'
 
@@ -58,7 +58,9 @@ function chatList (params) {
 function serviceChat (params) {
   return vm.$http.get(frontUser + 'service/info', {params:params})
 }
-
+function chatServiceFirst (params) {
+  return vm.$http.post(frontUser + 'service/first', params)
+}
 
 /**
  * withdraw
@@ -106,6 +108,13 @@ function info (params) {
 function infoDetail (params) {
   return vm.$http.get(message + 'web/information/info', {params:params})
 }
+function chatAnonymousFirst (params) {
+  return vm.$http.get(message + 'visitor/service/first', {params:params})
+}
+function chatAnonymousInfo (params) {
+  return vm.$http.get(message + 'visitor/service/info', {params:params})
+}
+
 export default {
   current,
   login,
@@ -126,6 +135,9 @@ export default {
   selfChat,
   chattersInfo,
   chatFirst,
+  chatServiceFirst,
+  chatAnonymousFirst,
+  chatAnonymousInfo,
   chatList,
   serviceChat,
   questionList,

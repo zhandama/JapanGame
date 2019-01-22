@@ -31,7 +31,7 @@
                 <div class="commodity-name f28 border-bottom">
                     <input type="text" v-model="params.title" placeholder="アカウント名（50文字以内）" maxlength="50">
                 </div>
-                <textarea class="text-area f28" v-model="params.description" placeholder="アカウントの説明（2000文字以内）&#10;キャラクター、武器、ランク、課金額、プレイ日数など" maxlength="2000"></textarea>
+                <textarea class="text-area f28" v-model="params.description" placeholder="アカウントの説明（2000文字以内）キャラクター、武器、ランク、課金額、プレイ日数など" maxlength="2000"></textarea>
             </div>
         </div>
         <div class="bg-fff pt-15 mb-20" v-if="property.length>0">
@@ -39,8 +39,8 @@
               <div class="record-titl f28 color-333 px-25">{{item.gamePropertyName.propertyName}}</div>
               <div class="order-container bg-fff f28  pb-15">
                   <div class="commodity-name f28 border-bottom">
-                    <v-input v-if="item.gameProperty.userFillType==2" inputType="tel" :maxlength="14" :inputPlaceholder="'入力'+item.gamePropertyName.propertyName" v-model.trim="item.propertyValue" />
-                    <input v-if="item.gameProperty.userFillType==1" type="text" :placeholder="'入力'+item.gamePropertyName.propertyName" v-model.trim="item.propertyValue" maxlength="200"/>
+                    <v-input v-if="item.gameProperty.userFillType==2" inputType="tel" :maxlength="14" :inputPlaceholder="item.gamePropertyName.propertyName+'を入力してください'" v-model.trim="item.propertyValue" />
+                    <input v-if="item.gameProperty.userFillType==1" type="text" :placeholder="item.gamePropertyName.propertyName+'を入力してください'" v-model.trim="item.propertyValue" maxlength="200"/>
                     {{item.gamePropertyName.unitName}}
                   </div>
               </div>
@@ -49,6 +49,7 @@
             <div class="order-container bg-fff f28  pb-15">
                 <div class="commodity-name f28">
                   <v-input inputType="tel" :maxlength="9" inputPlaceholder="価格（半角数字）" v-model.trim="params.price" />
+                  円
                 </div>
             </div>
         </div>
@@ -251,7 +252,7 @@ export default {
           id: this.property[i].id||''
         }
         if ((!this.property[i].propertyValue||this.property[i].propertyValue.length<1)&&this.property[i].gameProperty.required) {
-          this.$toast('入力'+this.property[i].gamePropertyName.propertyName)
+          this.$toast(this.property[i].gamePropertyName.propertyName+'を記入してください')
           return true
         }
         list.push(property)
@@ -266,15 +267,19 @@ export default {
             this.$toast('画像をアップロードしてください')
             return true
           } else if (key==='title') {
-            this.$toast('タイトルは空にできません')
+            this.$toast('商品名を記入してください')
             return true
           } else if (key==='description') {
-            this.$toast('説明は空にできません')
+            this.$toast('説明を記入してください')
             return true
           } else if (key==='price') {
-            this.$toast('価格は空にできません')
+            this.$toast('価格を記入してください')
             return true
           }
+        }
+        if (key==='price' && this.params[key]<='0') {
+          this.$toast('価格を記入0より大きくなければならない')
+          return true
         }
       }
       if (!this.agreement) {

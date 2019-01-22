@@ -2,7 +2,7 @@
  * @Author: tangxm
  * @Date: 2018-12-04 15:47:15
  * @LastEditors: tangxm
- * @LastEditTime: 2018-12-29 15:09:24
+ * @LastEditTime: 2019-01-22 13:52:24
  */
 const fixedDou = function (num) {
   num = Math.floor(num*100)/100
@@ -25,15 +25,15 @@ const formatTimeFilter = function formatTime(date) {
 const orderFilter = function (val) {
   var tip = ''
   if (val===1) {
-    tip = '保留中の支払い'
+    tip = '未払い'  // 待付款
   } else if (val===2) {
-    tip = '取引中'
+    tip = '取引中' // 交易中
   } else if (val===3) {
-    tip = '取引が成功する'
+    tip = '取引完了' // 交易成功
   } else if (val===4) {
-    tip = '取引の取り消し'
+    tip = 'キャンセルされた取引' // 交易取消
   } else if (val===5) {
-    tip = '払い戻しのキャンセル'
+    tip = '払い戻しのキャンセル' // 交易退款
   }
   return tip
 }

@@ -96,9 +96,6 @@ export default {
       this.filterSearch(params)
       this.clickFilter()
     },
-    onChange(value) {
-      this.$toast('当前值：' + value);
-    },
     start () {
       this.startmove = true
     },

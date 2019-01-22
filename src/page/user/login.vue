@@ -3,7 +3,7 @@
     <p class="login-email f30 bg-fff">メールアドレスまたは電話番号</p>
     <div class="form-control bg-fff">
         <input type="input" class="control-box f30" placeholder="メールアドレスまたは電話番号" v-model="params.account" @keyup.enter="login" maxlength="30">
-        <input type="password" class="control-box f30" placeholder="パスワード" v-model="params.password" @keyup.enter="login" maxlength="18">
+        <input type="password" class="control-box f30" onpaste="return false"  placeholder="パスワード" v-model="params.password" @keyup.enter="login" maxlength="18">
         <div class="signin">
             <a class="sign-box f30 color-fff" @click="login">ログイン</a>
         </div>
@@ -76,18 +76,16 @@ export default {
     },
     login() {
       if (this.params.account.length==0) {
-        this.$toast('アカウント番号を入力してください')
+        this.$toast('アカウントを入力してください') // 请输入帐号
         return
       }
       if (this.params.password.length==0) {
-        this.$toast('パスワードを記入してください')
+        this.$toast('パスワードを入力してください') // 请输入密码
         return
       }
       this.$api.user.login(this.params).then(res=> {
         if (res.code==='00' && res.data) {
           this.pageTo()
-        } else {
-          this.$toast('ログイン失敗')
         }
       })
     },

@@ -25,7 +25,7 @@
                             <em class="f24 color-666" v-if="order.userGoodsCollectionVO.collectionNum>0">×{{order.userGoodsCollectionVO.collectionNum}}</em>
                         </div>
                     </div>
-                    <div class="mbl-cper f28">￥{{order.goodsPrice}}</div>
+                    <div class="mbl-cper f28">￥{{order.goodsPrice|toThousands}}</div>
                     <div class="mbl-parea  f22">{{order.goodsDescription}}</div>
                 </div>
             </div>
@@ -36,7 +36,10 @@
             <div class="content-item">
                 <span class="title f28 color-666 fl">注文番号 : </span>
                 <em class="order color-000 fl ml-20 f28">{{order.orderId}}</em>
-                <a class="copy fr f24 color-666 mr-25">コピーする</a>
+                <a class="copy fr f24 color-666 mr-25" 
+                v-clipboard:copy="order.orderId"
+                v-clipboard:success="onCopy"
+                v-clipboard:error="onError">コピーする</a>
             </div>
             <div class="content-item">
                 <span class="title f28 color-666 fl">次の時間 : </span>
@@ -63,7 +66,7 @@
     <div class="mt-20 bg-fff px-25 all-href">
         <div class="buy-href">
             <a @click="pay()" class="f30 color-fff" v-if="order.orderStatus===1">購入する</a>
-            <a @click="confirm()" class="f30 color-fff" v-if="order.orderStatus===2">納品を確認する</a>
+            <a @click="confirm()" class="f30 color-fff" v-if="order.orderStatus===2">納品確認</a>
         </div>
         <div class="edit-href mt-25">
             <a @click="cancel()" class="f30 color-fff delete fl" v-if="order.orderStatus===1"><span>取り消す</span></a>
@@ -80,7 +83,7 @@
 <script>
 import Footer from '@/components/footer.vue'
 import {mapActions, mapState} from 'vuex'
-import {formatTimeFilter, orderFilter} from '@/components/filter'
+import {formatTimeFilter, orderFilter, toThousands} from '@/components/filter'
 export default {
   components:{
     Footer
@@ -150,15 +153,15 @@ export default {
         orderId: this.order.orderId
       }
       this.$dialog.confirm({
-        message: '納品を確認する？',
+        message: '納品確認してよろしいでしょうか', // 确认收货
         confirmButtonText:'はい',
         cancelButtonText:'いいえ'
       }).then(() => {
         this.$api.order.confirm(params).then(res => {
           if (res&&res.code === '00') {
-            this.$toast('納品の完了を確認する')
+            this.$toast('納品完了') // 确认收货成功
             setTimeout(() => {
-              this.$router.push({name:'orderbuy',query:{status:3}})
+              this.$router.push({name:'OrderBuy',query:{status:3}})
             }, 2000)
           }
         })
@@ -172,7 +175,7 @@ export default {
         orderId: this.orderId
       }
       this.$dialog.confirm({
-        message: '注文をキャンセルする？',
+        message: '注文をキャンセルしてよろしいでしょうか', // 取消订单
         confirmButtonText:'はい',
         cancelButtonText:'いいえ'
       }).then(() => {
@@ -180,7 +183,7 @@ export default {
           if (res&&res.code === '00') {
             this.$toast('成功をキャンセルする')
             setTimeout(() => {
-              this.$router.push({name:'orderbuy',query:{status:3}})
+              this.$router.push({name:'OrderBuy',query:{status:3}})
             }, 2000)
           }
         })
@@ -207,6 +210,12 @@ export default {
         }
       })
     },
+    onCopy: function (e) {
+      this.$toast('复制成功: ' + e.text) // 复制成功
+    },
+    onError: function (e) {
+      this.$toast('Failed to copy texts') // 复制失败
+    },
     ...mapActions({
       getOrder: 'GET_ORDER',
     })
@@ -220,7 +229,8 @@ export default {
   },
   filters:{
     formatTimeFilter,
-    orderFilter
+    orderFilter,
+    toThousands
   }
 }
 </script>

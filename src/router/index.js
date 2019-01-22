@@ -7,6 +7,8 @@ const Search = r => require.ensure([], () => r(require('@/page/search')), 'home'
 const Message = r => require.ensure([], () => r(require('@/page/message')), 'chat')
 const Chat = r => require.ensure([], () => r(require('@/page/chat')), 'chat')
 const SiteInfo = r => require.ensure([], () => r(require('@/page/siteInfo')), 'home')
+const Schedule = r => require.ensure([], () => r(require('@/page/siteInfo_schedule')), 'home')
+
 import {sellRouter} from './sell.js'
 import {buyRouter,buyRouters} from './buy.js'
 import {userRouter,userRouters} from './user.js'
@@ -23,13 +25,13 @@ export default new Router({
     }
   },
   routes: [
-    {path: '/', name: 'Home', component: Home, meta: { keepAlive: true }},
+    {path: '/', name: 'Home', component: Home},
     {path: '/index.html', name: 'Home1', component: Home},
     {path: '/search', name: 'Search', component: Search},
     {path: '/history', components: {default:IndexPage}, children: [{path: '', name: 'History', component: HistoryPage}]},
     {path: '/message', name: 'Message', component: Message,meta: {requireAuth: true}},
     {path: '/chat', components: {default:IndexPage},children: [{path: '',name: 'Chat', component: Chat}]},
-    {path: '/siteinfo', components: {default:IndexPage}, children: [{path: '', name: 'SiteInfo', component: SiteInfo}]},
+    {path: '/siteinfo', components: {default:IndexPage}, children: [{path: '', name: 'SiteInfo', component: SiteInfo},{path: '', name: 'Schedule', component: Schedule}]},
     sellRouter,
     buyRouter,
     buyRouters,

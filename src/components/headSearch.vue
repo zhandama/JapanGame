@@ -1,7 +1,7 @@
 <template>
   <div class="index-header fixed-top pt-20 px-25">
     <div class="index-top">
-      <router-link :to="{name:'Chat'}">
+      <router-link :to="{name:'Help'}">
         <div class="index-header-logo">
           <span></span>
         </div>

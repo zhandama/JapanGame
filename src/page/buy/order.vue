@@ -69,7 +69,7 @@ export default {
   },
   created () {
     this.$bus.emit("title", 'お支払い')
-    this.$bus.emit("showTopRight", true)
+    this.$bus.emit("showTopRight", false)
     this.init()
   },
   methods: {

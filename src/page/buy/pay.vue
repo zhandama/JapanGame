@@ -20,7 +20,7 @@
               </div>
       </div>
     <div class="order-payment mt-20 bg-fff">
-        <div class="japan-titl f30 fontbold px-25"><span class="current pl-25">支払い方法を選択してください。</span></div>
+        <!-- <div class="japan-titl f30 fontbold px-25"><span class="current pl-25">支払い方法を選択してください。</span></div> -->
       </div>
       <div class="order-gold bg-fff">
         <div class="single ml-25 border-bottom py-20">
@@ -60,7 +60,6 @@ export default {
   },
   created () {
     this.$bus.emit("title", 'お支払い')
-    this.$bus.emit("showTopRight", true)
     this.init()
   },
   methods: {

@@ -17,7 +17,7 @@
 .record-conn .demolist .mbgmes-con .mbl-title .like em{font-family: "Arial";display: block;}
 .record-conn .demolist .mbgmes-con .mbl-cper{height: auto;display: block;overflow: hidden;line-height: 0.5rem;color: #d82121;font-weight: bold;}
 .record-conn .demolist .mbgmes-con .mbl-parea{line-height: 0.32rem;color: #777777;}
-.record-conn .demolist .mbgmes-con .mbl-hotpot{height: auto;display: block;overflow: hidden; margin-top:0.08rem;}
+.record-conn .demolist .mbgmes-con .mbl-hotpot{height: auto;display: block;overflow: hidden; margin-top:0.08rem;max-width: 95%}
 .record-conn .demolist .mbgmes-con .mbl-hotpot .pthot{ height:0.32rem; line-height:0.32rem; color:#777777; min-width: 2.66rem; display:inline-block;}
 
 /*更多*/

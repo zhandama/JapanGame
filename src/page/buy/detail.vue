@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-97">
     <div class="jpdetail-banner">
       <ul class="slides" v-if="info.goodsImageUrls">
         <van-swipe :autoplay="3000" v-if="info.goodsImageUrls">
@@ -11,7 +11,7 @@
     </div>
     <div class="jpdetail-assct bg-fff px-20 pt-25 pb-30">
       <div class="assct-titl f30 color-000">{{info.title}}</div>
-      <div class="assct-price mt-20 f32 color-m1">￥{{info.price}}</div>
+      <div class="assct-price mt-20 f32 color-m1">￥{{info.price|toThousands}}</div>
       <div class="assct-enter mt-25 f30" ref="assctBtn"><a class="bg-m1 color-fff assct-btn" @click="goOrder()" v-if="info.stockNum!=0&&(userInfo.id!=info.sellerId)">購入手続きへ</a></div>
       <div class="assct-state mt-25 f30" v-if="info.userGoodsCollection"><a class="border fl" :class="{active:info.userGoodsCollection.userCollection}" @click="likeAdd(info)"><span class="good">いいね<em v-if="info.userGoodsCollection.collectionNum>0">x{{info.userGoodsCollection.collectionNum|collectionNum}}</em></span></a><a class="border fr" @click="goIm()"><span class="contact">売り手に連絡する</span></a></div>
     </div>
@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <div class="index-record mt-20 bg-fff"  v-if="similarList.length>0">
+    <div class="index-record mt-20 bg-fff pb-200"  v-if="similarList.length>0">
       <div class="japan-titl f30 fontbold px-25"><span class="current pl-25">モンストのその他のアカウントデータ</span></div>
       <div class="record-conn" v-if="similarList.length>0">
         <div  v-for="(item,index) in similarList" :key='index'>
@@ -108,7 +108,13 @@
             </div>
         </div>
     </div>
-   
+    <div class="slides-big" style="z-index:3030;height:1rem" v-if="showClose">
+      <div class="slidesbig-titl">
+          <div class="sdtitl-info">
+            <span class="slide-conn f32 color-fff"><a class="sdbig-close fr" @click="closeBigImg()"></a></span>
+          </div>
+      </div>
+    </div>
     <div class="dialog_cover opacity-75" style="z-index:9" v-if="RZshow" @click="RZshow = false"></div>
   </div>
 </template>
@@ -118,6 +124,7 @@ import HeadSearch from '@/components/headSearch.vue'
 import ChoseGame from '@/components/choseGame.vue'
 import Footer from '@/components/footer.vue'
 import List from '@/components/list.vue'
+import { toThousands } from '@/components/filter'
 import { Swipe, SwipeItem, ImagePreview } from 'vant'
 import { mapActions, mapState } from 'vuex'
 export default {
@@ -138,7 +145,9 @@ export default {
       similarList: [],
       RZshow: false,
       showBottom: false,
-      showInfo: true
+      showInfo: true,
+      showClose: false,
+      instance: ''
     }
   },
   created() {
@@ -161,6 +170,11 @@ export default {
   },
   beforeRouteLeave (to, from, next) {
     window.removeEventListener('scroll', this.handleScroll)
+    if (to.name == "Goodslist") {
+      to.meta.keepAlive = true;
+    } else {
+      to.meta.keepAlive = false;
+    }
     next()
   },
   mounted () {
@@ -207,13 +221,16 @@ export default {
       })
     },
     openImg(imgList) {
-      const instance = ImagePreview({
+      this.showClose = true
+      this.instance = ImagePreview({
         images: imgList,
         startPosition: 0,
-        onClose() {
-          // do something
-        }
+        asyncClose: true
       })
+    },
+    closeBigImg () {
+      this.showClose = false
+      this.instance.close();
     },
     async likeAdd(item) {
       if (!this.isLogin) {
@@ -235,7 +252,7 @@ export default {
     },
     goIm() {
       if (this.userInfo && this.userInfo.id === this.info.sellerId) {
-        this.$toast('連絡ができない')
+        this.$toast('自分に連絡できません') // 不能联系自己
         return
       }
       this.$router.push({ name: 'Chat', query: { goodsId: this.info.goodsId } })
@@ -261,7 +278,7 @@ export default {
           this.$router.push({ name: 'Order', query: { goodsId: this.info.goodsId } })
         } else if (res && res.data && res.data.haveUnPayOrder) {
           this.$dialog.confirm({
-            message: 'あなたが支払う必要があるもの',
+            message: '未払い注文があります', // 已经存在未支付订单，去支付
             confirmButtonText: 'はい',
             cancelButtonText: 'いいえ'
           }).then(() => {
@@ -269,8 +286,6 @@ export default {
           }).catch(() => {
             // on cancel
           });
-        } else {
-          this.$toast(res.message)
         }
       }, err => {
         this.$toast(err)
@@ -296,6 +311,7 @@ export default {
     })
   },
   filters: {
+    toThousands,
     collectionNum(num) {
       if (num > 9999) {
         num = Math.floor((num / 10000) * 100) / 100 + 'w'

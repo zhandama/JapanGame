@@ -6,11 +6,13 @@ import router from './router'
 import Axios from './http.js'
 import VueBus from 'vue-bus'
 import Vuex from 'vuex'
+import VueClipboard from 'vue-clipboard2'
 import store from './store'
 // import Vant from 'vant'
 // import 'vant/lib/index.css'
 import {Toast, List, PullRefresh, Loading, Dialog} from 'vant';
 import api from './api'
+import fanyi from './components/fanyi'
 
 // 引入mockjs
 // require('./mock/index.js')
@@ -18,8 +20,10 @@ import api from './api'
 // Vue.use(Vant)
 Vue.use(Toast).use(List).use(PullRefresh).use(Loading).use(Dialog)
 Vue.config.productionTip = false
+Vue.prototype.$fanyi = fanyi
 Vue.prototype.$http = Axios
 Vue.prototype.$api = api
+Vue.use(VueClipboard)
 Vue.use(VueBus)
 Vue.use(Vuex)
 

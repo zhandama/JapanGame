@@ -34,7 +34,6 @@ export default {
     }
   },
   created () {
-    this.$bus.emit("title", 'サイト情報')
     this.$bus.emit("showTopRight", true)
     this.init()
   },

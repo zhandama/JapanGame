@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="jplist-nav bg-fff f30 mt-97 new-buyer-nav fixed-top border-bottom" style="z-index:1">
-        <a class="jpnav fl" :class="{active:params.orderQueryStatus==1}" @click="changeActive('1')">保留中の支払い</a>
+        <a class="jpnav fl" :class="{active:params.orderQueryStatus==1}" @click="changeActive('1')">未払い</a>
         <a class="jpnav fl" :class="{active:params.orderQueryStatus==2}" @click="changeActive('2')">取引中</a>
-        <a class="jpnav fl" :class="{active:params.orderQueryStatus==3}" @click="changeActive('3')">購入済み</a>
+        <a class="jpnav fl" :class="{active:params.orderQueryStatus==3}" @click="changeActive('3')">取引終了</a>
     </div>
       <van-pull-refresh
         v-model="refreshing"
@@ -30,7 +30,7 @@
                               <em class="f24 color-666" v-if="item.userGoodsCollectionVO.collectionNum>0">×{{item.userGoodsCollectionVO.collectionNum}}</em>
                             </div>
                         </div>
-                        <div class="mbl-cper f28">￥{{parseInt(item.realPay)}}</div>
+                        <div class="mbl-cper f28">￥{{parseInt(item.realPay)|toThousands}}</div>
                         <div class="mbl-parea  f22">{{item.gameName}}</div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                         <span class="text f28 fl color-666" v-if="params.orderQueryStatus==3">{{item.orderStatus|orderFilter}}</span>
                         <span class="text f28 fl color-666" v-if="params.orderQueryStatus==2">{{item.refundStatus!=0?'返金中です':''}}</span>
                         <router-link class="fr buy color-fff f28 bg-m1" :to="{name:'Pay',query:{orderId:item.orderId}}" v-if="item.orderStatus===1">購入する</router-link>
-                        <a class="fr buy color-fff f28 bg-m1" @click="confirm(item)" v-if="item.orderStatus===2&&item.refundStatus==0">納品を確認する</a>
+                        <a class="fr buy color-fff f28 bg-m1" @click="confirm(item)" v-if="item.orderStatus===2&&item.refundStatus==0">納品確認</a>
                         <router-link :to="{name:'Chat',query:{goodsId:item.goodsId}}" class="f28 color-666 fr" v-if="params.orderQueryStatus==2">売り手に連絡する</router-link>
                         <router-link class="f28 color-666 fr" :to="{name:'OrderRefund',query:{orderId:item.orderId}}" v-if="item.orderStatus===2&&item.refundStatus==0">払い戻し</router-link>
                         <a class="f28 color-666 fr" @click="cancel(item)" v-if="item.orderStatus===1">取り消す</a>
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import {orderFilter} from '@/components/filter'
+import {orderFilter, toThousands} from '@/components/filter'
 export default {
   data () {
     return {
@@ -116,7 +116,7 @@ export default {
         orderId: item.orderId
       }
       this.$dialog.confirm({
-        message: '注文をキャンセルする？',
+        message: '注文をキャンセルしてよろしいでしょうか', // 取消订单
         confirmButtonText:'はい',
         cancelButtonText:'いいえ'
       }).then(() => {
@@ -138,7 +138,7 @@ export default {
         orderId: item.orderId
       }
       this.$dialog.confirm({
-        message: '納品を確認する？',
+        message: '納品確認してよろしいでしょうか', // 确认收货
         confirmButtonText:'はい',
         cancelButtonText:'いいえ'
       }).then(() => {
@@ -171,7 +171,8 @@ export default {
     }
   },
   filters:{
-    orderFilter
+    orderFilter,
+    toThousands
   }
 }
 </script>
